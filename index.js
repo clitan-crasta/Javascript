@@ -1,5 +1,5 @@
 import recursion from './src/recursion.js';
 
-console.log(recursion);
+const rec = new recursion('aabbaa');
 
-recursion.init;
+console.log(rec.checkPalindromeStr());
