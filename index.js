@@ -1,5 +1,9 @@
-import recursion from './src/recursion.js';
+import Palindrome from './src/recursion.js';
 
-const rec = new recursion('aabbaa');
+const rec = new Palindrome();
 
-console.log(rec.checkPalindromeStr());
+console.log(rec);
+
+console.log(rec.checkPalindromeStr('aabb'));
+console.log(rec.checkPalindromeStrRecursion('aabbaa'));
+console.log(rec.checkPalindromeNumber(121));

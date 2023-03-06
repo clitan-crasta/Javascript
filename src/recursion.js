@@ -1,23 +1,46 @@
-export default class recursion {
-  constructor(str) {
-    this.str = str;
-  }
-
+export default class Palindrome {
   /**
    * palindrome
    * type - str
+   *
+   *  ---- O(n/2)
    */
 
-  checkPalindromeStr = () => {
+  checkPalindromeStr = (str) => {
     let l = 0;
-    let h = this.str.length - 1;
+    let h = str.length - 1;
 
-    // while (l < h) {
-    //   if (this.str[l] !== this.str[h]) {
-    //     return false;
-    //   }
-    // }
+    if (str.length === 1) {
+      return true;
+    }
+
+    while (l < h) {
+      if (str[l++] !== str[h--]) {
+        return false;
+      }
+    }
     return true;
-    // return this.str === this.str.split('').reverse().join(''); --- O(n)
+  };
+
+  checkPalindromeStrRecursion = (str) => {
+    if (str.length === 1 || str.length == 0) {
+      return true;
+    }
+
+    if (str[0] === str[str.length - 1]) {
+      return this.checkPalindromeStrRecursion(str.substring(1, str.length - 1));
+    } else return false;
+  };
+
+  checkPalindromeNumber = (value) => {
+    let temp = value;
+    let sum = 0;
+
+    while (value > 0) {
+      let r = value % 10;
+      sum = sum * 10 + r;
+      value = Math.floor(value / 10);
+    }
+    return temp === sum;
   };
 }
