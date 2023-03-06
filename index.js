@@ -1,8 +1,6 @@
-import Palindrome from './src/recursion.js';
+import Palindrome from './src/palindrome.js';
 
 const rec = new Palindrome();
-
-console.log(rec);
 
 console.log(rec.checkPalindromeStr('aabb'));
 console.log(rec.checkPalindromeStrRecursion('aabbaa'));
